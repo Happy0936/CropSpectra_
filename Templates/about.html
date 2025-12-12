@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About CropSpectra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body, html { 
+      height: 100%; 
+      width: 100%; 
+      color: white; 
+      overflow-x: hidden; 
+      background: radial-gradient(circle at 50% 50%, #1b2735, #090a0f); 
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    nav h2 {
+      font-size: 26px;
+      color: #00ffa1;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00ffa1;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a:hover { color: #00ffa1; }
+
+    /* MAIN CONTENT */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 140px auto 50px auto;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 13px;
+      margin-top: 55px
+    }
+
+    h3 {
+      text-align: left;
+      margin-bottom: 13px;
+      
+    }
+    h1 { color: #00ffa1; font-size: 32px; margin-bottom: 13px; }
+    h2 { color: #00ffa1; font-size: 32px; }
+    h3 { color: #86eccf; font-size: 22px; }
+    h4 {color: #86eccf;}
+    p, li { 
+      font-size: 17px; 
+      line-height: 1.8; 
+      color: #dcdcdc; 
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    ul { 
+      margin-left: 25px; 
+      margin-bottom: 20px;
+    }
+
+    li { line-height: 1.7; }
+
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
+      margin-top: 50px;
+    }
+
+    /* 3D PARTICLES BACKGROUND */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 50px 0; /* space between sections */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 3D Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>🌿 CropSpectra</h1>
+    <ul>
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+<li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+<li><a href="{{ url_for('contact') }}">Contact</a></li>
+<li><a href="{{ url_for('predict_page') }}">Predict</a></li>
+{% if session.get('user') %}
+  <li><a href="{{ url_for('logout') }}">Logout ({{ user }})</a></li>
+{% else %}
+  <li><a href="{{ url_for('login') }}">Login</a></li>
+{% endif %}
+
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <h1>Project Details</h1>
+    <p>
+      Modern agriculture faces a major challenge: <b>crop diseases</b>, which reduce yield, affect quality, and threaten food security worldwide. Detecting these diseases early is often difficult for farmers, especially when visual symptoms are subtle. This is where <b>CropSpectra</b> comes in — an <b>AI-powered crop disease prediction system</b> designed to support farmers, agronomists, and agricultural researchers.
+    </p>
+    <p>
+      <b>CropSpectra</b> leverages <b>Deep Learning</b> and <b>Image Analysis</b> to identify crop diseases accurately from leaf images. Using <b>Convolutional Neural Networks (CNNs)</b> trained on thousands of real crop images, the system can detect diseases at <b>early stages</b>, helping prevent losses, improve productivity, and promote sustainable farming practices.
+    </p>
+
+    <h3>Key Features</h3>
+    <ul>
+      <li><b>AI-based Detection</b>: Uses deep learning to identify multiple crop diseases from leaf images.</li>
+      <li><b>Real-time Prediction</b>: With a single image upload, CropSpectra predicts disease type within seconds.</li>
+      <li><b>Wide Crop Coverage</b>: Trained on Tomatoes, Potatoes, and Bell Peppers — some of the most widely grown and economically important crops.</li>
+      <li><b>Multiple Disease Detection</b>: Detects a variety of fungal, bacterial, viral, and pest-related diseases.</li>
+      <li><b>User-friendly Interface</b>: Designed for farmers with minimal technical knowledge to easily upload images and receive actionable results.</li>
+    </ul>
+
+    <h2>Motivation</h2>
+    <ul>
+      <li><b>Early Disease Detection</b>: Identifying crop diseases before they spread saves both time and money.</li>
+      <li><b>Empowering Farmers</b>: Giving farmers the tools to make <b>data-driven decisions</b> without requiring expert knowledge.</li>
+      <li><b>Sustainable Agriculture</b>: Reducing the overuse of chemicals by applying treatments only when needed.</li>
+      <li><b>Food Security</b>: Minimizing crop loss ensures stable yields and reliable food supply.</li>
+    </ul>
+    <p>
+      Agriculture is the backbone of the global economy, and CropSpectra aims to <b>combine cutting-edge AI with practical farming solutions</b>, making advanced technology accessible to farmers everywhere.
+    </p>
+
+    <h2>Crops Covered</h2>
+    <ul>
+      <li><b>Tomatoes</b></li>
+      <li><b>Potatoes</b></li>
+      <li><b>Bell Peppers (Capsicum)</b></li>
+    </ul>
+    <p>These crops were selected because they are <b>economically important</b> and highly susceptible to <b>various diseases</b>. The system can easily be extended to other crops in the future as more data becomes available.</p>
+
+    <h2>Diseases Detected</h2>
+    <p>The model has been trained on multiple disease classes for each crop, including:</p>
+
+    <h4>Tomato Diseases:</h4>
+    <ul>
+      <li><b>Early Blight</b> – Brown spots on leaves, fruit lesions, reduced yield</li>
+      <li><b>Late Blight</b> – Dark lesions, plant wilting, rapid spread</li>
+      <li><b>Leaf Mold</b> – Yellowish spots on leaves turning brown</li>
+      <li><b>Septoria Leaf Spot</b> – Circular spots with gray centers</li>
+      <li><b>Target Spot</b> – Necrotic rings on leaves and fruits</li>
+      <li><b>Tomato Mosaic Virus</b> – Mosaic leaf patterns, stunted growth</li>
+      <li><b>Yellow Leaf Curl Virus</b> – Leaf curling, yellowing, reduced fruit production</li>
+      <li><b>Spider Mites Infestation</b> – Tiny webs, leaf discoloration, stunted growth</li>
+      <li><b>Bacterial Spot</b> – Dark, water-soaked spots on leaves and fruits</li>
+    </ul>
+
+    <h4>Potato Diseases:</h4>
+    <ul>
+      <li><b>Early Blight</b> – Dark spots on leaves, tuber damage</li>
+      <li><b>Late Blight</b> – Rapid leaf decay, stem infection</li>
+      <li><b>Healthy</b> – Normal, disease-free tubers and leaves</li>
+    </ul>
+
+    <h4>Bell Pepper Diseases:</h4>
+    <ul>
+      <li><b>Bacterial Spot</b> – Water-soaked lesions on leaves and fruit</li>
+      <li><b>Healthy</b> – Disease-free plants</li>
+    </ul>
+
+    <h2>Why CropSpectra is Unique</h2>
+    <ul>
+      <li>Uses <b>AI and Deep Learning</b> trained on <b>real crop datasets</b>, providing high accuracy.</li>
+      <li>Can detect multiple diseases from <b>one simple image</b>, saving farmers time and resources.</li>
+      <li>Works as a <b>decision-support tool</b>, guiding preventive measures and treatments.</li>
+      <li>Designed with <b>user-friendly interface</b>, making it accessible to both small and large-scale farmers.</li>
+    </ul>
+    <p>
+      CropSpectra is more than a tool — it is a <b>smart companion for farmers</b>, helping them <b>protect crops, improve yield, and ensure sustainable agriculture</b>. 🌱
+    </p>
+  </div>
+
+  <div class="footer">
+    © 2024 CropSpectra | Smart Vision for a Healthier Harvest 🌿 
+  </div>
+
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 90 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
