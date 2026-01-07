@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | CropSpectra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body, html { margin: 0; height: 100%; overflow: hidden; color: white; }
+
+
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, #1b2735, #090a0f);
+      z-index: 0;
+    }
+  
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
+      margin-top: 30px;
+    }
+
+         nav {
+  width: 100%;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+nav h1 {
+  font-size: 28px;
+  color: #00ffa1;
+  font-weight: 700;
+}
+
+    .container {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 50px;
+      border-radius: 20px;
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      width: 380px;
+      text-align: center;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeIn 1s ease;
+    }
+
+    h1 { font-weight: 700; margin-bottom: 25px; font-size: 26px; color: #fff; }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin: 10px 0;
+      font-size: 15px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+      border: none;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    /* BACK BUTTON */
+    .back-btn {
+      display: block;
+      margin-top: 15px;
+      padding: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.35);
+      transform: scale(1.05);
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .success { background: rgba(0,255,161,0.2); color: #00ffa1; }
+    .error { background: rgba(255,77,77,0.2); color: #ff4d4d; }
+
+    a { color: #00ffa1; text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+
+    @keyframes fadeIn { 
+      from { opacity: 0; transform: translateY(20px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+    
+
+  </style>
+</head>
+<body>
+<div id="particles-js"></div>
+<nav>
+  <h1>🌿 CropSpectra</h1>
+</nav>
+
+
+  <div class="container">
+    <h1>🌱 CropSpectra Login</h1>
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <input type="text" name="username_email" placeholder="Username or Email" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- ✔ DIRECT ACCESS HINT -->
+    <p style="margin-top: 15px; font-size: 14px; color: #86eccf;">
+      💡 Quick Access: <b>crop</b> / <b>crop</b>
+    </p>
+
+    <!-- ✔ BACK BUTTON -->
+    <a href="javascript:history.back()" class="back-btn">⬅ Back</a>
+
+    <p><a href="{{ url_for('forgot_password') }}">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="message {{ category }}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+<footer>Happy© 2025 CropSpectra | Smart Vision for a Healthier Harvest 🌿</footer>
+
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": { 
+        "number": { "value": 90 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "move": { "speed": 2 } 
+      },
+      "interactivity": { 
+        "events": { 
+          "onhover": { "enable": true, "mode": "repulse" }, 
+          "onclick": { "enable": true, "mode": "push" } 
+        } 
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

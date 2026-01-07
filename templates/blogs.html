@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Agriculture & Crop Science | CropSpectra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      color: #f0f0f0;
+      background: radial-gradient(circle at 50% 50%, #1b2735, #090a0f);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    nav h1 {
+      font-size: 28px;
+      color: #00ffa1;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00ffa1;
+      bottom: -4px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a:hover { color: #00ffa1; }
+
+    /* MAIN CONTENT */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 140px auto 50px auto;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1 { color: #00ffa1; font-size: 36px; margin-bottom: 20px; }
+    h2 { color: #00ffa1; font-size: 32px; margin: 25px 0 15px 0; }
+    h3 { color: #86eccf; font-size: 24px; margin: 20px 0 10px 0; }
+    h4 { color: #86eccf; font-size: 20px; margin: 15px 0 10px 0; }
+
+    p, li { font-size: 17px; line-height: 1.8; color: #dcdcdc; margin-bottom: 20px; text-align: justify; }
+    ul { margin-left: 25px; margin-bottom: 20px; }
+    li { line-height: 1.7; }
+
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
+      margin-top: 50px;
+    }
+
+    /* 3D PARTICLES BACKGROUND */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>🌿 CropSpectra</h1>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a href="{{ url_for('predict_page') }}">Predict</a></li>
+      {% if session.get('user') %}
+      <li><a href="{{ url_for('logout') }}">Logout ({{ user }})</a></li>
+      {% else %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1> About Agriculture & Crop Science</h1>
+
+  <h2> Introduction to Agriculture</h2>
+  <p>Agriculture is the foundation of human civilization — it sustains life, shapes economies, and provides the essential resources for food, fiber, and fuel. At its core, agriculture is the practice of cultivating plants and raising animals to meet human needs. It is not just a profession; it is the heartbeat of societies, connecting communities, supporting livelihoods, and contributing to national and global economies.</p>
+  
+  <p>Over centuries, agriculture has evolved from primitive farming methods to highly sophisticated practices involving modern technology, genetics, and sustainable farming techniques. Farmers today use data, AI, and precision tools to monitor soil health, optimize irrigation, and maximize crop yields. Despite these advancements, the fundamental goal of agriculture remains the same: to produce food efficiently, sustainably, and responsibly.</p>
+  
+  <p>Agriculture can be broadly divided into crop cultivation, horticulture, livestock farming, aquaculture, and agroforestry. Each sector plays a crucial role in providing nutrition, economic stability, and environmental balance. Beyond food production, agriculture supports raw materials for industries, medicinal plants, and ecological services, making it indispensable for a healthy planet.</p>
+  
+  <p>The success of agriculture depends on understanding the climate, soil, water resources, and crop cycles. Farmers must balance productivity with sustainability — ensuring that natural resources are used efficiently while protecting biodiversity and minimizing environmental impact. Modern agriculture also embraces organic farming, integrated pest management, and renewable energy solutions to create a greener, more resilient farming system.</p>
+  
+  <p>In today’s world, agriculture is not limited to rural areas or traditional methods. It has become technology-driven, knowledge-intensive, and globally connected, with innovations like AI-based crop disease detection, drone monitoring, precision irrigation, and smart greenhouses transforming the way we grow and manage crops.</p>
+  
+  <p>Ultimately, agriculture is more than food production; it is a strategic pillar of global development, food security, and sustainable living. Understanding its principles, challenges, and innovations is essential for anyone involved in farming, policy-making, or environmental conservation.</p>
+  
+  <p>🌾 In essence, agriculture is the art and science of cultivating life — nurturing the earth to nourish humanity.</p>
+
+
+    <h2>Types of Crops / Seasonal Crops</h2>
+    
+    <p>Crops can be classified based on their growing seasons, life cycles, and economic importance. Understanding these classifications helps farmers choose the right crops for their region, optimize planting schedules, and manage resources effectively. Here are the main types of crops:</p>
+    <h3>i. Kharif Crops (Monsoon Crops)</h3>
+    <p>Kharif crops are grown during the rainy season and depend on monsoon rains and warm temperatures.</p>
+
+    <h4>Sowing & Growing Conditions</h4>
+    <ul>
+      <li><b>Sowing Time:</b> June to July (monsoon arrival)</li>
+      <li><b>Soil:</b> Well-drained, fertile, moisture-retaining soils (alluvial, loamy)</li>
+      <li><b>Water:</b> High requirement; rainfall-based</li>
+      <li><b>Climate:</b> Warm and humid</li>
+    </ul>
+
+    <h4>Common Examples</h4>
+    <ul>
+      <li>Rice</li>
+      <li>Maize</li>
+      <li>Millets (Jowar, Bajra)</li>
+      <li>Soybean</li>
+      <li>Cotton</li>
+      <li>Sugarcane</li>
+    </ul>
+
+    <h4>Life Cycle</h4>
+    <ul>
+      <li>Seed Germination → 5–15 days</li>
+      <li>Vegetative Growth → Rainy season growth</li>
+      <li>Flowering → Warm, humid stage</li>
+      <li>Fruiting/Grain Formation → Grain development</li>
+      <li>Harvest → September–October</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Rain-fed agriculture</li>
+      <li>Short to medium duration (3–6 months)</li>
+      <li>High yield potential</li>
+      <li>Economic importance (rice, maize)</li>
+    </ul>
+
+    <h4>Challenges</h4>
+    <ul>
+      <li>Erratic rainfall</li>
+      <li>Pest & disease pressure</li>
+      <li>Soil erosion and nutrient loss</li>
+    </ul>
+
+    <h4>Tips for Farmers</h4>
+    <ul>
+      <li>Monitor rainfall and soil moisture</li>
+      <li>Use disease-resistant varieties</li>
+      <li>Practice crop rotation</li>
+      <li>Use fertilizers and irrigation wisely</li>
+    </ul>
+  
+    <h3>ii. Rabi Crops (Winter Crops)</h3>
+    <p>Rabi crops are grown in the winter season, sown after monsoon and harvested in spring.</p>
+
+    <h4>Sowing & Growing Conditions</h4>
+    <ul>
+      <li><b>Sowing Time:</b> October to December</li>
+      <li><b>Soil:</b> Fertile, loamy or clayey soils</li>
+      <li><b>Water:</b> Moderate, mainly through irrigation</li>
+      <li><b>Climate:</b> Cool and dry weather</li>
+    </ul>
+
+    <h4>Common Examples</h4>
+    <ul>
+      <li>Wheat</li>
+      <li>Barley</li>
+      <li>Gram (Chickpea)</li>
+      <li>Mustard</li>
+      <li>Peas</li>
+      <li>Oats & Linseed</li>
+    </ul>
+
+    <h4>Life Cycle</h4>
+    <ul>
+      <li>Germination → Cool, moist conditions</li>
+      <li>Vegetative Growth → Winter months</li>
+      <li>Flowering → Late winter</li>
+      <li>Fruiting → End of winter</li>
+      <li>Harvest → March–April</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Irrigation-dependent</li>
+      <li>Cool season growth</li>
+      <li>Medium to long duration (4–6 months)</li>
+      <li>High economic value (wheat, barley)</li>
+    </ul>
+
+    <h4>Challenges</h4>
+    <ul>
+      <li>Frost damage</li>
+      <li>Pest infestations</li>
+      <li>Water scarcity</li>
+      <li>Nutrient deficiency</li>
+    </ul>
+
+    <h4>Tips for Farmers</h4>
+    <ul>
+      <li>Use high-yield, disease-resistant varieties</li>
+      <li>Ensure proper irrigation</li>
+      <li>Apply balanced fertilizers</li>
+      <li>Implement pest management</li>
+    </ul>
+ 
+    <h3>ii. Zaid Crops (Summer Crops)</h3>
+    <p>Zaid crops are short-duration crops grown between Rabi and Kharif seasons, mainly during summer.</p>
+
+    <h4>Sowing & Growing Conditions</h4>
+    <ul>
+      <li><b>Sowing Time:</b> March to June</li>
+      <li><b>Soil:</b> Sandy loam or alluvial soils</li>
+      <li><b>Water:</b> High, requires frequent irrigation</li>
+      <li><b>Climate:</b> Warm and sunny</li>
+    </ul>
+
+    <h4>Common Examples</h4>
+    <ul>
+      <li>Cucumber</li>
+      <li>Watermelon / Muskmelon</li>
+      <li>Bottle Gourd</li>
+      <li>Pumpkin</li>
+      <li>Fodder Crops (Maize, Sorghum)</li>
+      <li>Bitter Gourd</li>
+    </ul>
+
+    <h4>Life Cycle</h4>
+    <ul>
+      <li>Seed Germination → Within a week</li>
+      <li>Vegetative Growth → Rapid leaf/stem growth</li>
+      <li>Flowering → Early stage</li>
+      <li>Harvest → Within 2–3 months</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Short duration (2–4 months)</li>
+      <li>High market value</li>
+      <li>Warm season growth</li>
+      <li>Irrigation-dependent</li>
+    </ul>
+
+    <h4>Challenges</h4>
+    <ul>
+      <li>Heat stress</li>
+      <li>Water scarcity</li>
+      <li>Pest infestations</li>
+      <li>Nutrient management</li>
+    </ul>
+
+    <h4>Tips for Farmers</h4>
+    <ul>
+      <li>Use short-duration varieties</li>
+      <li>Ensure consistent irrigation</li>
+      <li>Apply fertilizers wisely</li>
+      <li>Monitor pests regularly</li>
+    </ul>
+  
+    <h3>iv. Perennial Crops (Multi-year Crops)</h3>
+    <p>Perennial crops yield for several years without replanting and provide long-term agricultural value.</p>
+
+    <h4>haracteristics</h4>
+    <ul>
+      <li>Long lifespan (3–50+ years)</li>
+      <li>Continuous production</li>
+      <li>Requires permanent area</li>
+      <li>High initial investment</li>
+    </ul>
+
+    <h4>Common Examples</h4>
+    <ul>
+      <li><b>Fruit Trees:</b> Mango, Apple, Orange, Banana</li>
+      <li><b>Nut Crops:</b> Cashew, Almond, Walnut, Coconut</li>
+      <li><b>Plantation Crops:</b> Tea, Coffee, Rubber, Cocoa</li>
+      <li><b>Medicinal Plants:</b> Aloe Vera, Lemongrass, Mint</li>
+    </ul>
+
+    <h4>Life Cycle</h4>
+    <ul>
+      <li><b>Establishment:</b> Root/stem development</li>
+      <li><b>Vegetative Growth:</b> Branch and leaf development</li>
+      <li><b>Maturity:</b> Fruit/nut production (after 3–5 years)</li>
+      <li><b>Maintenance:</b> Continuous pruning, fertilization, pest control</li>
+    </ul>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>Long-term yield</li>
+      <li>High economic importance</li>
+      <li>Environmentally sustainable</li>
+      <li>Needs continuous care</li>
+    </ul>
+
+    <h4>Challenges</h4>
+    <ul>
+      <li>High initial cost</li>
+      <li>Delayed returns</li>
+      <li>Pest/disease vulnerability</li>
+      <li>Climate sensitivity</li>
+    </ul>
+
+    <h4>Tips for Farmers</h4>
+    <ul>
+      <li>Choose suitable, disease-resistant varieties</li>
+      <li>Maintain soil fertility with compost</li>
+      <li>Use proper irrigation systems</li>
+      <li>Prune and train plants regularly</li>
+    </ul>
+
+    <h2>Crop Diseases by Plant Type</h2>
+  <p>
+    Understanding crop diseases is crucial for preventing yield loss, ensuring quality produce, and maintaining food security. Different crops are susceptible to specific diseases caused by fungi, bacteria, viruses, nematodes, or pests. Here’s an overview of major crops and the diseases that affect them:
+  </p>
+
+  <!-- Tomato -->
+  <h3>i. Tomato (Solanum lycopersicum)</h3>
+  <p>Tomatoes are highly vulnerable to a range of diseases:</p>
+  <ul>
+    <li><b>Early Blight</b> – Caused by <i>Alternaria solani</i>, symptoms include dark brown spots on leaves, leaf drop, and reduced yield.</li>
+    <li><b>Late Blight</b> – Caused by <i>Phytophthora infestans</i>, rapid leaf decay, stem lesions, and fruit rot.</li>
+    <li><b>Tomato Mosaic Virus</b> – Mosaic-like leaf patterns, stunted growth, and reduced fruit production.</li>
+    <li><b>Septoria Leaf Spot</b> – Circular grayish spots on leaves leading to premature leaf drop.</li>
+    <li><b>Bacterial Spot</b> – Water-soaked lesions on leaves and fruits; reduces fruit quality.</li>
+  </ul>
+
+  <!-- Potato -->
+  <h3>ii. Potato (Solanum tuberosum)</h3>
+  <p>Potatoes are affected by fungal and viral infections:</p>
+  <ul>
+    <li><b>Early Blight</b> – Dark leaf spots, stem lesions, and tuber rot.</li>
+    <li><b>Late Blight</b> – Fast-spreading infection causing wilting, leaf decay, and tuber destruction.</li>
+    <li><b>Potato Virus Y (PVY)</b> – Mosaic patterns, leaf deformation, and stunted growth.</li>
+    <li><b>Golden Nematode Infestation</b> – Swollen roots and cysts that reduce nutrient absorption.</li>
+  </ul>
+
+  <!-- Bell Pepper -->
+  <h3>iii. Bell Pepper / Capsicum (Capsicum annuum)</h3>
+  <p>Bell peppers are prone to bacterial and fungal diseases:</p>
+  <ul>
+    <li><b>Bacterial Spot</b> – Water-soaked lesions on leaves and fruits; leads to defoliation.</li>
+    <li><b>Anthracnose</b> – Dark, sunken lesions on fruits causing rotting.</li>
+    <li><b>Powdery Mildew</b> – White powdery growth on leaves reducing photosynthesis.</li>
+    <li><b>Pepper Mosaic Virus</b> – Leaf discoloration, curling, and stunted growth.</li>
+  </ul>
+
+  <!-- Rice -->
+  <h3>iv. Rice (Oryza sativa)</h3>
+  <p>Rice faces diseases mainly caused by fungi, bacteria, and pests:</p>
+  <ul>
+    <li><b>Blast Disease</b> – Caused by <i>Magnaporthe oryzae</i>, affects leaves, nodes, and panicles.</li>
+    <li><b>Brown Spot</b> – Small brown lesions on leaves, reducing grain yield.</li>
+    <li><b>Sheath Blight</b> – Fungal infection causing lesions on stems and leaf sheaths.</li>
+    <li><b>Bacterial Leaf Blight</b> – Yellowing and wilting of leaves, affecting overall productivity.</li>
+  </ul>
+
+  <!-- Wheat -->
+  <h3>v. Wheat (Triticum aestivum)</h3>
+  <p>Wheat is susceptible to fungal and viral infections:</p>
+  <ul>
+    <li><b>Rust Diseases</b> – Leaf rust, stem rust, and stripe rust causing orange-brown pustules on leaves and stems.</li>
+    <li><b>Powdery Mildew</b> – White powdery growth on leaves and stems, reducing photosynthesis.</li>
+    <li><b>Karnal Bunt</b> – Fungal infection affecting grains and reducing flour quality.</li>
+    <li><b>Wheat Mosaic Virus</b> – Stunted growth, mottled leaves, and reduced yield.</li>
+  </ul>
+
+  <!-- Maize -->
+  <h3>vi. Maize / Corn (Zea mays)</h3>
+  <p>Corn crops are affected by several fungal and viral diseases:</p>
+  <ul>
+    <li><b>Northern Corn Leaf Blight</b> – Long, grayish-green lesions on leaves causing leaf death.</li>
+    <li><b>Southern Corn Leaf Blight</b> – Small, elliptical lesions that affect photosynthesis.</li>
+    <li><b>Maize Dwarf Mosaic Virus</b> – Mosaic leaf patterns, stunted growth, and poor yield.</li>
+    <li><b>Fusarium Ear Rot</b> – Fungal infection causing moldy kernels and mycotoxin contamination.</li>
+  </ul>
+
+  <!-- Citrus Fruits -->
+  <h3>vii. Citrus Fruits (Lemon, Orange, etc.)</h3>
+  <p>Citrus crops face bacterial, fungal, and viral infections:</p>
+  <ul>
+    <li><b>Citrus Canker</b> – Water-soaked lesions on leaves, stems, and fruits leading to premature fruit drop.</li>
+    <li><b>Greening Disease (Huanglongbing)</b> – Yellowing of leaves, fruit malformation, and reduced yield.</li>
+    <li><b>Phytophthora Root Rot</b> – Root decay reducing nutrient uptake and overall plant growth.</li>
+  </ul>
+
+  <!-- Strawberry -->
+  <h3>viii. Strawberry (Fragaria × ananassa)</h3>
+  <p>Strawberries are susceptible to several fungal diseases:</p>
+  <ul>
+    <li><b>Powdery Mildew</b> – White powdery fungal growth on leaves, stems, and fruits.</li>
+    <li><b>Gray Mold (Botrytis cinerea)</b> – Fungal infection causing soft, brownish-gray rotting of fruits.</li>
+    <li><b>Leaf Spot Disease</b> – Circular dark lesions on leaves reducing photosynthesis.</li>
+  </ul>
+
+   
+  <h2>Effects of Pesticides</h2>
+
+  <p>
+    Pesticides are chemical or natural substances used to protect crops from pests, diseases, and weeds.
+    While they can significantly improve crop yields, their use carries both benefits and potential risks.
+    Understanding these effects is essential for safe and sustainable farming.
+  </p>
+
+  <h3>i. Types of Pesticides</h3>
+  <p>Pesticides can be broadly classified into:</p>
+  <ul>
+    <li><strong>Insecticides</strong> – Target harmful insects such as aphids, caterpillars, and beetles.</li>
+    <li><strong>Fungicides</strong> – Control fungal infections like blight, mildew, and rust.</li>
+    <li><strong>Herbicides</strong> – Eliminate unwanted weeds that compete with crops for nutrients.</li>
+    <li><strong>Rodenticides</strong> – Control rodents that damage crops or stored grains.</li>
+    <li><strong>Nematicides</strong> – Protect crops from harmful nematodes that attack roots.</li>
+  </ul>
+  <p>Additionally, pesticides may be <em>synthetic/chemical</em> or <em>natural/biopesticides</em> derived from plants, microbes, or minerals.</p>
+
+  <h3>ii. Benefits of Pesticides</h3>
+  <p>Pesticides provide several advantages in agriculture:</p>
+  <ul>
+    <li><strong>Increased crop yield</strong> – Reduce losses caused by pests and diseases.</li>
+    <li><strong>Improved crop quality</strong> – Prevent deformities and discoloration, improving market value.</li>
+    <li><strong>Efficient farming</strong> – Save labor and time compared to manual control methods.</li>
+    <li><strong>Economic advantage</strong> – Reduce financial losses due to infestations.</li>
+    <li><strong>Support for food security</strong> – Help meet the demands of a growing population.</li>
+  </ul>
+
+  <h3>iii. Negative Effects of Pesticides</h3>
+  <p>Despite benefits, pesticides can have harmful impacts if misused:</p>
+
+  <h4>a. Effects on Human Health</h4>
+  <ul>
+    <li>Acute exposure: headaches, nausea, dizziness, skin irritation.</li>
+    <li>Long-term exposure: linked to respiratory problems, hormonal imbalance, neurological disorders, and certain cancers.</li>
+    <li>Vulnerable groups: children and farm workers are especially at risk.</li>
+  </ul>
+
+  <h4>b. Effects on Crops and Soil</h4>
+  <ul>
+    <li>Residues in produce can reduce food safety.</li>
+    <li>Harm to beneficial insects (bees, predators) and soil microbiota, affecting fertility.</li>
+  </ul>
+
+  <h4>c. Environmental Impact</h4>
+  <ul>
+    <li>Water contamination – runoff can pollute rivers, lakes, and groundwater.</li>
+    <li>Air pollution – spray drift may affect nearby communities and wildlife.</li>
+    <li>Biodiversity loss – non-target organisms may be harmed, disrupting ecosystems.</li>
+  </ul>
+
+  <h3>vi. Natural vs. Chemical Pesticides</h3>
+  <p><strong>Chemical pesticides</strong> are often fast-acting and broadly effective but may persist in the environment and accumulate as toxic residues.</p>
+  <p><strong>Natural / biopesticides</strong> (e.g., neem oil, microbial agents) are generally safer for humans and beneficial organisms but may act more slowly and require repeated use.</p>
+
+  <h3>v. Safe Use and Best Practices</h3>
+  <p>To minimize risks while keeping benefits, follow these practices:</p>
+  <ul>
+    <li>Follow recommended dosages and application schedules.</li>
+    <li>Use appropriate protective gear when handling and spraying pesticides.</li>
+    <li>Rotate crops and implement Integrated Pest Management (IPM) techniques.</li>
+    <li>Prefer biopesticides where suitable and monitor pest levels before applying chemicals.</li>
+    <li>Store and dispose of pesticides safely to avoid contamination.</li>
+  </ul>
+
+    <h2>Advanced Agricultural Techniques</h2>
+  <p>
+    Modern agriculture is evolving rapidly, driven by technology, research, and innovation. Advanced agricultural techniques aim to increase productivity, reduce resource use, and promote sustainable farming practices. These methods not only improve yields but also ensure food security and environmental protection.
+  </p>
+
+  <!-- Precision Farming -->
+  <h3>i. Precision Farming</h3>
+  <p>
+    Precision farming uses data-driven technology to manage crops and soil more efficiently. Tools such as GPS, drones, sensors, and satellite imagery help farmers:
+  </p>
+  <ul>
+    <li>Monitor soil health, moisture, and nutrient levels</li>
+    <li>Apply water, fertilizers, and pesticides only where needed</li>
+    <li>Track crop growth and detect diseases early</li>
+  </ul>
+  <p>This approach reduces waste, lowers costs, and increases yields while minimizing environmental impact.</p>
+
+  <!-- Hydroponics -->
+  <h3>ii. Hydroponics</h3>
+  <p>
+    Hydroponics is a soil-less cultivation technique where plants grow in nutrient-rich water solutions. Benefits include:
+  </p>
+  <ul>
+    <li>Faster growth and higher yields</li>
+    <li>Efficient use of water and nutrients</li>
+    <li>Ability to grow crops anywhere, including urban areas</li>
+    <li>Reduced pest and disease incidence</li>
+  </ul>
+  <p>Popular crops for hydroponics include lettuce, tomatoes, cucumbers, and herbs.</p>
+
+  <!-- Aeroponics -->
+  <h3>iii. Aeroponics</h3>
+  <p>
+    Aeroponics is an advanced form of hydroponics where plant roots are suspended in the air and sprayed with nutrient-rich mist. Advantages:
+  </p>
+  <ul>
+    <li>Maximum oxygen availability to roots, promoting faster growth</li>
+    <li>Uses less water than traditional and hydroponic methods</li>
+    <li>Ideal for space-limited or vertical farming systems</li>
+    <li>Widely used for leafy greens, strawberries, and medicinal plants</li>
+  </ul>
+
+  <!-- Vertical Farming -->
+  <h3>iv. Vertical Farming</h3>
+  <p>
+    Vertical farming involves stacking crops in layers using controlled environments like greenhouses or indoor farms. Features include:
+  </p>
+  <ul>
+    <li>Efficient land use, especially in urban areas</li>
+    <li>Year-round production, independent of weather conditions</li>
+    <li>Reduced transportation costs and carbon footprint</li>
+    <li>Integration with hydroponic or aeroponic systems</li>
+  </ul>
+
+  <!-- Drip Irrigation -->
+  <h3>v. Drip Irrigation</h3>
+  <p>
+    Drip irrigation delivers water directly to the plant roots using tubes or pipes with small emitters. Benefits:
+  </p>
+  <ul>
+    <li>Saves water and prevents soil erosion</li>
+    <li>Reduces weed growth</li>
+    <li>Ensures uniform water distribution for better crop growth</li>
+    <li>Can be combined with fertilizers (fertigation)</li>
+  </ul>
+
+  <!-- Organic Farming -->
+  <h3>vi. Organic Farming & Sustainable Practices</h3>
+  <p>
+    Organic farming avoids synthetic chemicals, focusing on natural fertilizers, composting, crop rotation, and biological pest control. Advantages include:
+  </p>
+  <ul>
+    <li>Healthier crops and soil</li>
+    <li>Reduced environmental pollution</li>
+    <li>Improved biodiversity</li>
+    <li>Better market value for organically grown produce</li>
+  </ul>
+
+  <!-- Smart Farming -->
+  <h3>vii. Smart Farming with IoT & AI</h3>
+  <p>
+    Smart farming integrates Internet of Things (IoT) devices, sensors, and AI algorithms to optimize agricultural operations:
+  </p>
+  <ul>
+    <li>Real-time monitoring of soil, weather, and crop health</li>
+    <li>Early detection of diseases using AI-based models like CropSpectra</li>
+    <li>Automated irrigation, fertilization, and pest control</li>
+    <li>Predictive analytics for better yield management</li>
+  </ul>
+
+  <!-- Controlled Environment Agriculture -->
+  <h3>viii. Controlled Environment Agriculture (CEA)</h3>
+  <p>
+    CEA involves growing crops under controlled environmental conditions such as temperature, humidity, light, and CO₂. Benefits include:
+  </p>
+  <ul>
+    <li>Higher productivity and consistent quality</li>
+    <li>Reduced impact of pests and diseases</li>
+    <li>Optimal resource use for water, energy, and nutrients</li>
+  </ul>
+
+  </div>
+
+  <div class="footer">
+    © 2024 CropSpectra | Smart Vision for a Healthier Harvest 🌿
+  </div>
+
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 90 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

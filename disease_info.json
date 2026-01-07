@@ -1,0 +1,285 @@
+{
+  "Pepper__bell___Bacterial_spot": {
+    "description": "Bacterial spot of pepper is caused by Xanthomonas spp. and produces small water-soaked lesions on leaves, stems and fruit. It thrives in warm, wet weather and can severely reduce yield and fruit quality when uncontrolled.",
+    "symptoms": [
+      "Small, water-soaked spots on leaves that turn brown and often have a yellow halo",
+      "Rough, scab-like lesions on fruit; fruit cracking in severe cases",
+      "Premature leaf yellowing and defoliation under severe infection"
+    ],
+    "treatment": [
+      "Remove and destroy severely infected plants and plant debris to reduce inoculum.",
+      "Apply copper-based bactericides according to label (timed sprays during infection risk).",
+      "Use disease-free seed/transplants and disinfect tools between uses."
+    ],
+    "prevention": [
+      "Use certified disease-free transplants and resistant varieties if available.",
+      "Avoid overhead irrigation; use drip irrigation to reduce leaf wetness.",
+      "Practice crop rotation and avoid planting peppers/tomatoes in the same field consecutively.",
+      "Maintain good plant spacing and ventilation to reduce humidity."
+    ]
+  },
+  "Pepper__bell___healthy": {
+    "description": "A healthy bell pepper plant showing no disease symptoms—used as the 'healthy' class to indicate normal growth and good plant condition.",
+    "symptoms": [
+      "Uniform green leaves without spots or lesions",
+      "No wilting, necrosis or abnormal discoloration",
+      "Normal fruit set and development"
+    ],
+    "treatment": [
+      "Maintain balanced watering, soil fertility and pest monitoring.",
+      "Keep field hygiene and promptly remove any volunteer or diseased plants.",
+      "Continue regular scouting to detect early signs of problems."
+    ],
+    "prevention": [
+      "Use good cultural practices: correct spacing, soil testing and balanced fertilization.",
+      "Rotate crops and avoid continuous planting of susceptible crops.",
+      "Use integrated pest management (IPM) for insects that spread disease."
+    ]
+  },
+  "Potato___Early_blight": {
+    "description": "Early blight (Alternaria solani) is a common fungal disease of potato and tomato. It typically affects older foliage first and produces concentric ringed lesions that reduce photosynthetic area and yield.",
+    "symptoms": [
+      "Brown lesions with concentric rings (target-like) on older leaves",
+      "Yellowing of foliage around lesions and progressive defoliation",
+      "Occasional dark lesions on stems and fruits/tubers (secondary infections)"
+    ],
+    "treatment": [
+      "Remove and destroy infected foliage; practice sanitation to reduce inoculum.",
+      "Apply recommended fungicides (mancozeb, chlorothalonil, or site-specific products) as per label and local recommendations.",
+      "Ensure adequate nutrition (especially potassium) to improve plant resilience."
+    ],
+    "prevention": [
+      "Rotate with non-host crops and avoid planting in same soil consecutively.",
+      "Avoid overhead irrigation and irrigate early in day so foliage dries quickly.",
+      "Plant resistant/tolerant varieties where available and follow a protective fungicide schedule during high risk periods."
+    ]
+  },
+  "Potato___Late_blight": {
+    "description": "Late blight is caused by the oomycete Phytophthora infestans. It is highly destructive to potato and tomato, producing water-soaked lesions that rapidly expand in cool, wet conditions and can cause total crop loss.",
+    "symptoms": [
+      "Dark, water-soaked lesions on leaves that rapidly enlarge",
+      "White fuzzy sporulation on the underside of leaves in humid conditions",
+      "Dark brown/black rot of tubers and collapse of vines in severe outbreaks"
+    ],
+    "treatment": [
+      "Remove and destroy infected plants and volunteer potato plants immediately.",
+      "Use timely fungicide sprays (e.g., metalaxyl, cymoxanil, or locally recommended systemic products) following local extension guidance.",
+      "Avoid moving infected tubers between fields; store tubers in dry, cool conditions."
+    ],
+    "prevention": [
+      "Plant certified seed potatoes and use resistant/tolerant varieties when available.",
+      "Practice crop rotation and avoid planting potatoes/tomatoes near previous-season infection sites.",
+      "Monitor weather (cool, wet conditions increase risk) and apply protective fungicides before conditions favor disease."
+    ]
+  },
+  "Potato___healthy": {
+    "description": "A healthy potato plant or tuber with no visible signs of disease indicates normal growth and good agronomic condition.",
+    "symptoms": [
+      "Uniform green foliage without lesions",
+      "Tubers free of rot or discoloration",
+      "Strong, upright plants with good canopy development"
+    ],
+    "treatment": [
+      "Maintain recommended fertilization and irrigation practices.",
+      "Use scouting and preventive measures to keep plant healthy.",
+      "Store harvested tubers properly to avoid storage rots."
+    ],
+    "prevention": [
+      "Use certified seed potatoes and practice field sanitation.",
+      "Rotate crops and control volunteer potatoes and solanaceous weeds.",
+      "Follow IPM for insect vectors and practice good storage hygiene."
+    ]
+  },
+  "Tomato__Target_Spot": {
+    "description": "Target spot (Corynespora cassiicola) produces circular spots with concentric rings on tomato leaves and sometimes on fruit. The disease develops in warm, wet conditions and can reduce photosynthesis and yield.",
+    "symptoms": [
+      "Small circular to irregular brown spots with concentric ring patterns on leaves",
+      "Yellowing around lesions and premature leaf drop",
+      "Sunken dark spots on fruit in severe infections"
+    ],
+    "treatment": [
+      "Remove heavily infected leaves and destroy debris to reduce inoculum.",
+      "Apply fungicides labelled for target spot (e.g., strobilurin or triazole classes as recommended locally) following label instructions.",
+      "Improve airflow in canopy and reduce leaf wetness periods."
+    ],
+    "prevention": [
+      "Avoid dense planting and ensure good ventilation between plants.",
+      "Avoid overhead irrigation; water in mornings so leaves dry quickly.",
+      "Use clean transplants and rotate with non-host crops where practical."
+    ]
+  },
+  "Tomato__Tomato_mosaic_virus": {
+    "description": "Tomato mosaic virus (ToMV) is a stable plant virus that causes mosaic patterns, distortions and reduced vigor. It spreads mechanically (tools, hands, contaminated seed) and can persist on surfaces and seed coats.",
+    "symptoms": [
+      "Mottled light/dark green mosaic or mottling on leaves",
+      "Leaf distortion, stunting and reduced fruit set",
+      "Rough or misshapen fruit surface and uneven ripening"
+    ],
+    "treatment": [
+      "No chemical cure for viruses—remove and destroy infected plants to prevent spread.",
+      "Disinfect tools, greenhouse surfaces and hands regularly with suitable disinfectants.",
+      "Use certified virus-free seed and transplants."
+    ],
+    "prevention": [
+      "Implement strict sanitation: wash hands, disinfect tools and seed treatments where recommended.",
+      "Use resistant/tolerant varieties if available.",
+      "Control insect vectors and limit mechanical transmission (avoid working plants when wet)."
+    ]
+  },
+  "Tomato__Tomato_YellowLeaf__Curl_Virus": {
+    "description": "Tomato yellow leaf curl virus (TYLCV) is a viral disease transmitted primarily by whiteflies (Bemisia tabaci). It causes severe stunting, leaf curling and yield loss in tomato crops.",
+    "symptoms": [
+      "Upward curling and cupping of leaves with yellowing (chlorosis)",
+      "Stunted plant growth and reduced flowering/fruiting",
+      "Small, distorted fruits and uneven ripening"
+    ],
+    "treatment": [
+      "No chemical cure for viral infection; remove infected plants promptly.",
+      "Control whitefly populations using insecticidal soaps, neem oil or registered insecticides and reflective mulches.",
+      "Use virus-free transplants and maintain good sanitation."
+    ],
+    "prevention": [
+      "Use resistant varieties where available and practice strict nursery hygiene.",
+      "Implement whitefly control programs (sticky traps, natural enemies, insecticides as last resort).",
+      "Use row covers or barrier crops in early stages to reduce vector access."
+    ]
+  },
+  "Tomato_Bacterial_spot": {
+    "description": "Tomato bacterial spot is caused by Xanthomonas spp., producing small, angular to round brown spots on leaves and fruits. It spreads readily in splashing rain, on tools, and by human handling.",
+    "symptoms": [
+      "Small brown spots on leaves often with yellow halos",
+      "Fruit with roughened, scab-like lesions; cracking may occur",
+      "Severe infections lead to defoliation and reduced fruit quality"
+    ],
+    "treatment": [
+      "Apply copper-based bactericides according to local extension recommendations.",
+      "Remove and destroy heavily infected plants and debris.",
+      "Disinfect tools and avoid handling plants when wet."
+    ],
+    "prevention": [
+      "Use certified disease-free seed/transplants and proper spacing for airflow.",
+      "Avoid overhead irrigation and irrigate early in day so foliage dries quickly.",
+      "Rotate crops and remove volunteer solanaceous weeds that can harbor the pathogen."
+    ]
+  },
+  "Tomato_Early_blight": {
+    "description": "Early blight on tomato is caused by Alternaria solani and produces concentric ringed spots on older leaves. It reduces foliage and can impact yield by decreasing photosynthetic area.",
+    "symptoms": [
+      "Brown lesions with target-like concentric rings on older foliage",
+      "Yellowing of leaves starting near lesions and progressive defoliation",
+      "Dark lesions on stems and fruit in advanced cases"
+    ],
+    "treatment": [
+      "Remove infected lower leaves and maintain field sanitation.",
+      "Use protectant fungicides (mancozeb, chlorothalonil) or other locally recommended products.",
+      "Ensure balanced nutrition and avoid excessive nitrogen that favors dense canopy."
+    ],
+    "prevention": [
+      "Rotate crops and avoid planting tomatoes where early blight was severe last season.",
+      "Mulch to reduce soil splashing onto foliage and avoid overhead watering.",
+      "Plant tolerant varieties and follow a protective spray program during high-risk periods."
+    ]
+  },
+  "Tomato_healthy": {
+    "description": "Healthy tomato plant with no visible disease—indicates good cultivation practices and plant vigor.",
+    "symptoms": [
+      "Uniform green leaves, strong stems and healthy fruit set",
+      "No lesions, discoloration or pest damage",
+      "Good growth habit and normal flowering"
+    ],
+    "treatment": [
+      "Maintain soil fertility, irrigation scheduling, and regular scouting.",
+      "Protect plants proactively with cultural controls and IPM practices.",
+      "Promptly remove any pest or disease issues that appear."
+    ],
+    "prevention": [
+      "Use recommended fertilization and irrigation; avoid water stress.",
+      "Plant certified disease-free transplants and use crop rotation.",
+      "Monitor routinely and use biological controls and good sanitation."
+    ]
+  },
+  "Tomato_Late_blight": {
+    "description": "Late blight on tomato is caused by Phytophthora infestans (same pathogen as potato late blight). It causes rapidly expanding water-soaked lesions and can devastate tomato crops under cool, wet conditions.",
+    "symptoms": [
+      "Water-soaked dark lesions on leaves that enlarge quickly",
+      "White sporulation on the underside of leaves in humid conditions",
+      "Fruit and stem lesions; rapid plant collapse in severe outbreaks"
+    ],
+    "treatment": [
+      "Remove infected plants and volunteer solanaceous hosts immediately.",
+      "Apply effective fungicides preventively and during early infection (follow local extension recommendations).",
+      "Avoid moving infected material between fields."
+    ],
+    "prevention": [
+      "Use certified disease-free transplants and resistant varieties if available.",
+      "Rotate crops and avoid planting near potato fields with known outbreaks.",
+      "Reduce leaf wetness (avoid overhead irrigation, ensure good spacing and ventilation)."
+    ]
+  },
+  "Tomato_Leaf_Mold": {
+    "description": "Tomato leaf mold (Passalora fulva) is a fungus that thrives in humid greenhouse or field environments, causing yellow patches on the leaf upper surface and olive-green mold underneath.",
+    "symptoms": [
+      "Yellow spots on the upper surface of leaves that later turn brown",
+      "Olive-green fuzzy mold growth on the underside of leaves",
+      "Premature leaf drop leading to reduced vigor"
+    ],
+    "treatment": [
+      "Improve ventilation and reduce humidity in greenhouses; remove infected leaves.",
+      "Apply sulfur or other labeled fungicides for leaf mold as recommended locally.",
+      "Sanitize greenhouse surfaces and tools."
+    ],
+    "prevention": [
+      "Avoid dense canopies and improve airflow; space plants appropriately.",
+      "Prevent prolonged leaf wetness; use drip irrigation and water early.",
+      "Use clean transplants and disinfect greenhouse equipment regularly."
+    ]
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "description": "Septoria leaf spot (Septoria lycopersici) is a common fungal disease of tomato, beginning on lower leaves and producing many small circular spots with dark borders and light centers.",
+    "symptoms": [
+      "Numerous small circular spots on lower leaves with dark borders and gray centers",
+      "Yellowing of infected leaves and progressive defoliation",
+      "Reduced plant vigor and yield when severe"
+    ],
+    "treatment": [
+      "Remove and destroy infected lower foliage; avoid working in wet plants.",
+      "Apply fungicides containing chlorothalonil or mancozeb according to label instructions.",
+      "Practice good sanitation and rotate crops."
+    ],
+    "prevention": [
+      "Mulch to reduce soil splashing and avoid overhead irrigation.",
+      "Rotate crops and avoid planting tomatoes in same site each year.",
+      "Improve air circulation and maintain proper plant spacing."
+    ]
+  },
+  "Tomato_Spider_mites_Two_spotted_spider_mite": {
+    "description": "Two-spotted spider mite (Tetranychus urticae) is a tiny mite that feeds on the undersides of leaves, causing stippling, chlorosis and webbing. Infestations can severely reduce photosynthesis and lead to leaf drop.",
+    "symptoms": [
+      "Tiny yellow or white speckling (stippling) on upper leaf surfaces",
+      "Fine webbing on leaf undersides and between leaves in heavy infestations",
+      "Leaves become bronzed, curl and may drop prematurely"
+    ],
+    "treatment": [
+      "Use miticides registered for spider mite control following label instructions.",
+      "Apply horticultural oils or insecticidal soaps, targeting undersides of leaves.",
+      "Introduce or conserve natural predators (Phytoseiulus, Neoseiulus) where feasible."
+    ],
+    "prevention": [
+      "Maintain adequate irrigation and humidity (mites thrive in hot, dry conditions).",
+      "Monitor regularly and use thresholds to time control actions early.",
+      "Avoid unnecessary broad-spectrum insecticides that kill mite predators."
+    ]
+  },
+  "PlantVillage": {
+    "description": "PlantVillage is a dataset/origin label used in the training data (reference category). It does not represent a single disease; images flagged as this class are dataset source samples.",
+    "symptoms": [
+      "Not an actual disease class; may contain varied healthy or labelled examples"
+    ],
+    "treatment": [
+      "No treatment—used as dataset reference. Inspect individual images for specific diagnosis."
+    ],
+    "prevention": [
+      "N/A — this class represents dataset provenance rather than a plant disease."
+    ]
+  }
+}
