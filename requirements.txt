@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Flask==2.3.3
 gunicorn==23.0.0
 tensorflow==2.13.0
@@ -10,26 +9,3 @@ opencv-python-headless==4.8.0.76
 scikit-learn==1.3.2
 bcrypt==4.0.1
 
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-flask
-gunicorn
-tensorflow-cpu==2.20.0
-keras
-numpy
-pillow
-opencv-python-headless
-scikit-learn
-
->>>>>>> b9162cc (Upgrade TensorFlow to 2.20 for Render)
