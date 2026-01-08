@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -258,3 +259,265 @@
 </html>
 
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CropSpectra | Smart Vision for a Healthier Harvest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body, html { 
+      height: 100%; 
+      width: 100%; 
+      color: white; 
+      overflow-x: hidden; 
+      background: radial-gradient(circle at 50% 50%, #1b2735, #090a0f); 
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.4);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    nav h2 {
+      font-size: 26px;
+      color: #00ffa1;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00ffa1;
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a:hover { color: #00ffa1; }
+
+    /* MAIN CONTENT */
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 140px auto 50px auto;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 13px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      text-align: left;
+      margin-bottom: 13px;
+    }
+    h1 { color: #12f370df; font-size: 60px; }
+    h2 { color: #00ffa1; font-size: 32px; margin: 25px 0 15px 0;  }
+    h3 { color: #86eccf; font-size: 22px; }
+
+    p, li { 
+      font-size: 17px; 
+      line-height: 1.8; 
+      color: #dcdcdc; 
+      margin-bottom: 20px;
+      text-align: justify; 
+    }
+
+    ul { margin-left: 20px; }
+
+  
+        .footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
+      margin-top: 50px;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 3D Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+  <h2>🌿 CropSpectra</h2>
+  <ul> 
+<li><a href="{{ url_for('home') }}">Home</a></li>
+<li><a href="{{ url_for('about') }}">About</a></li>
+<li><a href="{{ url_for('blogs') }}">Blogs</a></li>
+<li><a href="{{ url_for('contact') }}">Contact</a></li>
+<li><a href="{{ url_for('predict_page') }}">Predict</a></li>
+{% if user %}
+  <li><a href="{{ url_for('logout') }}">Logout ({{ user }})</a></li>
+{% else %}
+  <li><a href="{{ url_for('login') }}">Login</a></li>
+{% endif %}
+
+  </ul>
+</nav>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <h1>Welcome to CropSpectra!</h1>
+    <h2>Smart Vision for a Healthier Harvest</h2>
+
+
+    <p>
+      Agriculture is the heartbeat of our planet — it sustains life, nurtures communities, and feeds the world.
+      But every year, countless farmers face devastating losses due to crop diseases that often go unnoticed until it’s too late.
+      <b>CropSpectra</b> was born from the vision to change that story — to empower every farmer with the intelligence of AI and the precision of modern science.
+    </p>
+
+
+    <p>
+      <b>CropSpectra</b> is an advanced AI-powered crop disease prediction system that combines technology and nature in perfect harmony.
+      Using Deep Learning and Image Recognition, it analyzes crop images to detect diseases in seconds — helping farmers identify issues long before they spread.
+      All it takes is one image for our intelligent model to read, interpret, and predict the health of your crop.
+    </p>
+
+
+    <p>
+      Whether it’s a tomato leaf showing early signs of infection or a potato plant struggling with blight,
+      CropSpectra sees what the human eye might miss. Its goal is not only to diagnose but also to educate and empower —
+      guiding farmers toward timely action, better yields, and healthier harvests.
+    </p>
+
+
+    <p>
+      By preventing disease outbreaks early, CropSpectra reduces crop loss, financial stress, and dependency on guesswork.
+      It ensures that every seed planted is given the best chance to grow strong and disease-free — contributing to a more sustainable and food-secure world.
+    </p>
+
+
+    <p>
+      Built with innovation, accuracy, and compassion, CropSpectra represents the future of smart farming —
+      where data meets soil, and technology breathes new life into agriculture.
+    </p>
+
+
+    <p><b>One click, one image, one solution — CropSpectra: your smart vision for a healthier harvest. 🌾</b></p>
+
+
+   
+
+
+    <h2>Overview</h2>
+    <p>
+      <b>CropSpectra</b> is an AI-based crop disease detection platform designed to assist farmers in identifying plant diseases quickly and accurately.
+      By using Deep Learning models trained on thousands of crop images, it can detect symptoms such as leaf discoloration, blight, or fungal spots — all in real time.
+    </p>
+
+
+    <p>This system empowers farmers to:</p>
+    <ul>
+      <li>Detect crop diseases at an <b>early stage</b></li>
+      <li><b>Reduce financial losses</b> caused by infection spread</li>
+      <li>Make <b>data-driven decisions</b> for better crop management</li>
+      <li>Contribute to <b>sustainable and smart agriculture</b></li>
+    </ul>
+
+
+    <p>In short, <b>CropSpectra bridges the gap between technology and traditional farming</b>, bringing innovation straight to the fields. 🌾</p>
+
+
+   
+
+
+    <h2>How It Works</h2>
+    <p><b>CropSpectra</b> simplifies disease detection into <b>three intelligent steps:</b></p>
+      <p><b>Upload</b> – Farmers upload a clear image of the affected crop leaf.</p>
+    <p><b>Analyze</b> – The AI model processes the image using deep learning algorithms.</p>
+    <p><b>Predict</b> – The system identifies the disease and provides accurate predictions.</p>
+    <p><i>Simple. Fast. Reliable — CropSpectra makes AI accessible for every farmer.</i></p>
+
+
+   
+
+
+    <h2>Try CropSpectra Today!</h2>
+    <p>
+      Don’t let crop diseases go unnoticed. Detect early, take action, and ensure a healthy harvest.
+      CropSpectra provides farmers with the smart vision they need to make informed decisions and grow with confidence.
+    </p>
+    <p><b>CropSpectra – Where AI Meets Agriculture, and Every Leaf Tells a Story. 🌾💚</b></p>
+  </div>
+
+
+  <div class="footer">
+    © 2024 CropSpectra | Smart Vision for a Healthier Harvest 🌿  
+  </div>
+
+
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 90 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
+
+
+>>>>>>> 2bba7527d5d050e6af88174284c4ad1b9dc66e39

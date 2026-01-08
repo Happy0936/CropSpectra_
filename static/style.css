@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body, html { margin: 0; padding: 0; font-family: Arial; }
 
 .hero {
@@ -13,3 +14,20 @@ body, html { margin: 0; padding: 0; font-family: Arial; }
 
 .login-form { margin-top: 20px; }
 .login-form input, .login-form button { padding: 10px; margin:5px; }
+=======
+body, html { margin: 0; padding: 0; font-family: Arial; }
+
+.hero {
+    height: 100vh;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.login-form { margin-top: 20px; }
+.login-form input, .login-form button { padding: 10px; margin:5px; }
+>>>>>>> 2bba7527d5d050e6af88174284c4ad1b9dc66e39

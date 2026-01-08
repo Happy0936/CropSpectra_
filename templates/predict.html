@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -577,3 +578,584 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌾 Crop Disease Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      color: white;
+      margin: 0;
+      background: radial-gradient(circle at 50% 50%, #1b2735, #090a0f);
+    }
+
+    /* === 3D Particle Background === */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      padding: 15px 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+    nav h1 { font-size: 28px; color: #00ffa1; font-weight: 700; }
+
+    /* CONTAINER */
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 750px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 160px auto; /* top spacing */
+      transition: margin-top 0.5s ease;
+    }
+
+    h1 { font-size: 30px; font-weight: 700; margin-bottom: 20px; color: #fff; }
+    form p { margin-bottom: 15px; color: #901dd2; font-weight: 900; font-size: 22px; }
+
+    input[type="file"] {
+      margin: 15px 0;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button {
+      background: #00b09b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    button:hover { background: #019176; }
+
+    .image-preview { margin: 20px 0; }
+    .image-preview img {
+      width: 250px;
+      border-radius: 12px;
+      border: 3px solid rgba(255,255,255,0.3);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .result { margin-top: 10px; text-align: left; color: #fff; line-height: 1.7; }
+    .result h2 { color: #ffe600; text-align: center; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,0,0,0.3); }
+    .result p strong { color: #ffe600; }
+    .result ul { margin-left: 25px; list-style-type: disc; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .back-btn { background: #555; color: white; }
+    .back-btn:hover { background: #333; }
+    .logout { background: #ff4b2b; color: white; }
+    .logout:hover { background: #d9361f; }
+
+    /* SPEAK BUTTON */
+    .speak-btn {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .speak-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+
+    .speak-btn:disabled {
+      background: #666;
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+
+    /* MULTI-LANGUAGE SECTION */
+    .multi-lang-section {
+      margin-top: 40px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 2px solid rgba(0, 255, 161, 0.3);
+    }
+
+    .multi-lang-section h2 {
+      color: #00ffa1;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .lang-selector {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .lang-selector select {
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .lang-selector select option {
+      background: #1b2735;
+      color: white;
+    }
+
+    .translate-btn {
+      background: linear-gradient(45deg, #00b09b, #96c93d);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    .translate-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 176, 155, 0.6);
+    }
+
+    .translate-btn:disabled {
+      background: #666;
+      cursor: not-allowed;
+    }
+
+    .translated-content {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    .translated-content.show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* BUTTON CONTAINER */
+    .button-group { text-align: center; margin-top: 25px; }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.7);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>🌿 CropSpectra</h1>
+  </nav>
+
+  <div class="container">
+    <h1>🌾 Crop Disease Prediction</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+      <p>Upload photo to check for disease</p>
+      <input type="file" name="file" required>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="image-preview">
+        <img src="{{ img_path }}" alt="Uploaded Image">
+      </div>
+
+      <div class="result">
+        <h2>{{ prediction }}</h2>
+        <p><strong>Description:</strong> {{ description }}</p>
+        {% if symptoms %}
+        <p><strong>Symptoms:</strong></p>
+        <ul>
+          {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <p><strong>Treatment:</strong> {{ treatment }}</p>
+        {% if prevention %}
+        <p><strong>Prevention:</strong> {{ prevention }}</p>
+        {% endif %}
+
+        <!-- ✔ SPEAKER BUTTON FOR TEXT-TO-SPEECH -->
+        <div style="text-align: center; margin-top: 20px;">
+          <button id="speakBtn" class="speak-btn" onclick="speakPrediction()">
+            🔊 Speak Details
+          </button>
+          <audio id="audioPlayer" style="display: none;"></audio>
+        </div>
+      </div>
+
+      <!-- ✔ MULTI-LANGUAGE SECTION -->
+      <div class="multi-lang-section">
+        <h2>🌐 Multi-Language Translation</h2>
+        <div class="lang-selector">
+          <select id="languageSelect">
+            <option value="">-- Select Language --</option>
+            <option value="hi">Hindi (हिंदी)</option>
+            <option value="bn">Bengali (বাংলা)</option>
+            <option value="mr">Marathi (मराठी)</option>
+            <option value="bho">Bhojpuri (भोजपुरी)</option>
+          </select>
+          <button class="translate-btn" onclick="translateContent()">Translate</button>
+        </div>
+
+        <div id="translatedContent" class="translated-content">
+          <h2 id="transPrediction"></h2>
+          <p><strong>Description:</strong> <span id="transDescription"></span></p>
+          <div id="transSymptomsSection" style="display: none;">
+            <p><strong>Symptoms:</strong></p>
+            <ul id="transSymptoms"></ul>
+          </div>
+          <p><strong>Treatment:</strong> <span id="transTreatment"></span></p>
+          <p><strong>Prevention:</strong> <span id="transPrevention"></span></p>
+
+          <!-- ✔ SPEAKER BUTTON FOR TRANSLATED TEXT -->
+          <div style="text-align: center; margin-top: 20px;">
+            <button id="transSpeakBtn" class="speak-btn" onclick="speakTranslated()" style="display: none;">
+              🔊 Speak Translation
+            </button>
+            <audio id="transAudioPlayer" style="display: none;"></audio>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Store prediction data for speech
+        const predictionData = {
+          prediction: "{{ prediction }}",
+          description: "{{ description }}",
+          symptoms: {{ symptoms | tojson }},
+          treatment: "{{ treatment }}",
+          prevention: "{{ prevention }}"
+        };
+
+        let isPlaying = false;
+        let audioGenerated = false;
+
+        // Store translated data
+        let translatedData = {};
+        let selectedLanguage = "";
+        let isTransPlaying = false;
+        let transAudioGenerated = false;
+
+        function speakPrediction() {
+          const btn = document.getElementById('speakBtn');
+          const audioPlayer = document.getElementById('audioPlayer');
+          
+          // If audio is playing, pause it
+          if (isPlaying) {
+            audioPlayer.pause();
+            btn.textContent = '🔊 Continue';
+            isPlaying = false;
+            return;
+          }
+
+          // If audio was already generated and paused, resume it
+          if (audioGenerated && audioPlayer.src) {
+            audioPlayer.play();
+            btn.textContent = '⏸ Pause';
+            isPlaying = true;
+            return;
+          }
+
+          // Generate new audio
+          btn.disabled = true;
+          btn.textContent = '⏳ Generating Speech...';
+
+          fetch('/text_to_speech', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(predictionData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              audioPlayer.src = data.audio_url;
+              audioPlayer.play();
+              btn.textContent = '⏸ Pause';
+              btn.disabled = false;
+              isPlaying = true;
+              audioGenerated = true;
+              
+              audioPlayer.onended = () => {
+                btn.textContent = '🔊 Speak Details';
+                isPlaying = false;
+              };
+            } else {
+              alert('Error generating speech: ' + data.error);
+              btn.disabled = false;
+              btn.textContent = '🔊 Speak Details';
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to generate speech');
+            btn.disabled = false;
+            btn.textContent = '🔊 Speak Details';
+          });
+        }
+
+        // Translation function
+        function translateContent() {
+          const langSelect = document.getElementById('languageSelect');
+          selectedLanguage = langSelect.value;
+
+          if (!selectedLanguage) {
+            alert('Please select a language first!');
+            return;
+          }
+
+          const translateBtn = document.querySelector('.translate-btn');
+          translateBtn.disabled = true;
+          translateBtn.textContent = '⏳ Translating...';
+
+          const requestData = {
+            target_lang: selectedLanguage,
+            prediction: predictionData.prediction,
+            description: predictionData.description,
+            symptoms: predictionData.symptoms,
+            treatment: predictionData.treatment,
+            prevention: predictionData.prevention
+          };
+
+          fetch('/translate_text', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              translatedData = data.translated;
+              
+              // Display translated content
+              document.getElementById('transPrediction').textContent = translatedData.prediction;
+              document.getElementById('transDescription').textContent = translatedData.description;
+              document.getElementById('transTreatment').textContent = translatedData.treatment;
+              document.getElementById('transPrevention').textContent = translatedData.prevention;
+
+              // Handle symptoms
+              const symptomsSection = document.getElementById('transSymptomsSection');
+              const symptomsList = document.getElementById('transSymptoms');
+              
+              if (translatedData.symptoms && translatedData.symptoms.length > 0) {
+                symptomsSection.style.display = 'block';
+                symptomsList.innerHTML = '';
+                translatedData.symptoms.forEach(symptom => {
+                  const li = document.createElement('li');
+                  li.textContent = symptom;
+                  symptomsList.appendChild(li);
+                });
+              } else {
+                symptomsSection.style.display = 'none';
+              }
+
+              // Show translated content and speaker button
+              document.getElementById('translatedContent').classList.add('show');
+              document.getElementById('transSpeakBtn').style.display = 'inline-block';
+              
+              // Reset audio state
+              transAudioGenerated = false;
+              isTransPlaying = false;
+              
+              translateBtn.disabled = false;
+              translateBtn.textContent = 'Translate';
+            } else {
+              alert('Translation failed: ' + data.error);
+              translateBtn.disabled = false;
+              translateBtn.textContent = 'Translate';
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to translate content');
+            translateBtn.disabled = false;
+            translateBtn.textContent = 'Translate';
+          });
+        }
+
+        // Speak translated text
+        function speakTranslated() {
+          const btn = document.getElementById('transSpeakBtn');
+          const audioPlayer = document.getElementById('transAudioPlayer');
+
+          // If audio is playing, pause it
+          if (isTransPlaying) {
+            audioPlayer.pause();
+            btn.textContent = '🔊 Continue';
+            isTransPlaying = false;
+            return;
+          }
+
+          // If audio was already generated and paused, resume it
+          if (transAudioGenerated && audioPlayer.src) {
+            audioPlayer.play();
+            btn.textContent = '⏸ Pause';
+            isTransPlaying = true;
+            return;
+          }
+
+          // Generate new audio
+          btn.disabled = true;
+          btn.textContent = '⏳ Generating Speech...';
+
+          const requestData = {
+            target_lang: selectedLanguage,
+            prediction: translatedData.prediction,
+            description: translatedData.description,
+            symptoms: translatedData.symptoms,
+            treatment: translatedData.treatment,
+            prevention: translatedData.prevention
+          };
+
+          fetch('/translated_speech', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              audioPlayer.src = data.audio_url;
+              audioPlayer.play();
+              btn.textContent = '⏸ Pause';
+              btn.disabled = false;
+              isTransPlaying = true;
+              transAudioGenerated = true;
+
+              audioPlayer.onended = () => {
+                btn.textContent = '🔊 Speak Translation';
+                isTransPlaying = false;
+              };
+            } else {
+              alert('Error generating speech: ' + data.error);
+              btn.disabled = false;
+              btn.textContent = '🔊 Speak Translation';
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to generate speech');
+            btn.disabled = false;
+            btn.textContent = '🔊 Speak Translation';
+          });
+        }
+
+        document.body.style.overflowY = "auto";
+        document.body.style.justifyContent = "flex-start";
+        document.querySelector('.container').style.marginTop = "100px";
+      </script>
+    {% endif %}
+
+    <!-- BUTTONS -->
+    <div class="button-group">
+      <a href="javascript:history.back()" class="btn back-btn">⬅ Back</a>
+      <a href="{{ url_for('logout') }}" class="btn logout">Logout</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2024 CropSpectra | Smart Vision for a Healthier Harvest 🌿
+  </footer>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 90 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 2bba7527d5d050e6af88174284c4ad1b9dc66e39
