@@ -213,7 +213,10 @@ def predict_page():
         # ---- Predict disease ----
         img = image.load_img(filepath, target_size=(224, 224))
         img_array = image.img_to_array(img)
-       img_array_exp = preprocess_input( np.expand_dims(img_array, axis=0))
+        
+         img_array_exp = preprocess_input(
+                np.expand_dims(img_array, axis=0)
+            )
 
         pred = model.predict(img_array_exp)
         result_index = np.argmax(pred, axis=1)[0]
