@@ -3,6 +3,10 @@ import sqlite3
 import bcrypt
 import os
 import tensorflow as tf
+
+tf.config.threading.set_intra_op_parallelism_threads(1)
+tf.config.threading.set_inter_op_parallelism_threads(1)
+
 import numpy as np
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
@@ -62,6 +66,7 @@ with open("train_labels.pkl", "rb") as f:
 
 
 feature_model = MobileNetV2(weights="imagenet", include_top=False, pooling="avg")
+feature_model.trainable = False
 
 
 # ---------------- HOME PAGE ----------------
@@ -208,7 +213,8 @@ def predict_page():
         # ---- Predict disease ----
         img = image.load_img(filepath, target_size=(224, 224))
         img_array = image.img_to_array(img)
-        img_array_exp = np.expand_dims(img_array, axis=0) / 255.0
+       img_array_exp = preprocess_input( np.expand_dims(img_array, axis=0))
+
         pred = model.predict(img_array_exp)
         result_index = np.argmax(pred, axis=1)[0]
         predicted_class = class_names[result_index]
