@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os
 import json
 
@@ -36,4 +35,3 @@ with open("classes.json", "w") as f:
 
 print("✅ classes.json created with", len(class_names), "classes.")
 print(class_names)
->>>>>>> 2bba7527d5d050e6af88174284c4ad1b9dc66e39
