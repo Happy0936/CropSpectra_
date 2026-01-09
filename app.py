@@ -223,15 +223,13 @@ def predict_page():
 
 
         # ---- Similarity check ----
-        img_feat = image.img_to_array(img)
-        img_feat = np.expand_dims(img_feat, axis=0)
-        img_feat = preprocess_input(img_feat)
-        img_embedding = feature_model.predict(img_feat)
-        similarities = cosine_similarity(img_embedding, train_features)
-        max_similarity = np.max(similarities)
+        preds = model.predict(img_array)
+        confidence = float(np.max(preds))
+        predicted_class = class_names[np.argmax(preds)]
 
 
-        if max_similarity < 0.6:
+        CONFIDENCE_THRESHOLD = 0.60
+        if max_similarity < CONFIDENCE_THRESHOLD:
             predicted_class = "Not a valid crop image"
             description = "The uploaded image does not match any trained crop classes."
             symptoms = []
