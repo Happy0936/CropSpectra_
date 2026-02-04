@@ -250,7 +250,7 @@
         <img src="{{ img_path }}" alt="Uploaded Image">
       </div>
 
-      <div class="result">
+        <div class="result">
         <h2>{{ prediction }}</h2>
         <p><strong>Description:</strong> {{ description }}</p>
         {% if symptoms %}
@@ -261,11 +261,24 @@
           {% endfor %}
         </ul>
         {% endif %}
-        <p><strong>Treatment:</strong> {{ treatment }}</p>
-        {% if prevention %}
-        <p><strong>Prevention:</strong> {{ prevention }}</p>
-        {% endif %}
+        {% if treatment %}
+    <p><strong>Treatment:</strong></p>
+    <ul>
+      {% for t in treatment %}
+        <li>{{ t }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
+  {% if prevention %}
+    <p><strong>Prevention:</strong></p>
+    <ul>
+      {% for p in prevention %}
+        <li>{{ p }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+        
         <!-- ✔ SPEAKER BUTTON FOR TEXT-TO-SPEECH -->
         <div style="text-align: center; margin-top: 20px;">
           <button id="speakBtn" class="speak-btn" onclick="speakPrediction()">
