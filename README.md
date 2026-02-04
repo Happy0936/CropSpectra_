@@ -5,6 +5,30 @@
 
 ---
 
+🔗 **Live Deployment (Render – Free Tier):**  
+[https://your-render-app-link](https://cropspectra.onrender.com)
+
+⚠️ *Note:* Due to limited resources in Render Free Tier, live image prediction is not supported in the deployed version.
+
+---
+
+
+## 🎥 Project Demo Video
+
+A complete working demonstration of the project is shown in the video below.
+
+🎬 **Demo Video Link:**  
+https://drive.google.com/your-video-link  
+(or YouTube unlisted link)
+
+The demo video shows:
+- Running the application via terminal
+- Loading the trained deep learning model
+- Performing crop disease prediction on real images
+- Correct disease output with details
+
+
+
 ## 🚀 Features
 
 ✅ **AI-Based Disease Detection** - Deep learning powered predictions  
@@ -102,6 +126,18 @@ To deactivate virtual environment:
 ```bash
 deactivate
 ```
+---
+
+## 🚧 Deployment Limitation
+
+The project is deployed on Render using the free tier.
+
+Due to limited RAM and storage:
+- The deep learning model (.h5 / .pkl) cannot be fully loaded
+- Live image prediction is not supported on the deployed version
+
+✅ The application works correctly in the local environment,  
+which is demonstrated in the provided demo video.
 
 ---
 
